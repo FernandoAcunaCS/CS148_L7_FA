@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 8th Edition
+   Tutorial 3
+   Case Problem 2
+   
+   Layout Style Sheet for A Soldier's Scrapbook
+   Author: Fernando Acuna
+   Date: 10/19/2024
+   
+   Filename: ss_layout.css
+
+*/
+
+/* Article Styles */
+
+article p:first-of-type::first-line {  /* Targets the first line of the first paragraph in <article> */
+  font-size: 1.25em;
+  font-variant: small-caps;
+}
+
+article p:first-of-type::first-letter {  /* Targets the first letter of the first paragraph in <article> */
+  font-size: 4em;
+  font-family: serif;  /* Or choose a specific serif font */
+  float: left;
+  line-height: 0.8em;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+
+/* Aside Styles */
+
+aside {
+  width: 768px;
+  float: left; 
+}
+
+
+/* Map Styles */
+
+#battleMap {  /* Targets the <div> with id="battleMap" */
+  width: 688px;
+  margin: 20px auto; /* Top/bottom: 20px, left/right: auto (centers the map) */
+  position: relative; /* Necessary for absolute positioning of markers */
+}
+
+
+/* Interactive Map Styles */
+
+#mapImage { /* Targets the <img> with id="mapImage" */
+  display: block;
+  width: 100%;
+}
+
+a.battleMarkers {  /* Targets all <a> elements with class="battleMarkers" */
+  position: absolute; 
+}
+
+#marker1 { top: 220px; left: 340px; }
+#marker2 { top: 194px; left: 358px; }
+#marker3 { top: 202px; left: 400px; }
+#marker4 { top: 217px; left: 452px; }
+#marker5 { top: 229px; left: 498px; }
+#marker6 { top: 246px; left: 544px; }
+
+
+/* Map Information Styles */
+
+.mapInfo {  /* Targets all elements with class="mapInfo" */
+  display: none; /* Initially hides the map information */
+}
+
+a.battleMarkers:hover + div.mapInfo { /* Targets the div.mapInfo immediately following a hovered marker */
+  display: block; /* Shows the map information on hover */
+}
